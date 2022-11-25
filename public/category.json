@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "category_name": "Oppo",
+    "img": "https://download.logo.wine/logo/Oppo/Oppo-Logo.wine.png",
+    "phones": [
+      {
+        "model": "Oppo F1 Plus",
+        "photo": "https://ibb.co/7S4nh2d",
+        "location": "Mymensignh",
+        "resellPrice": "15000",
+        "orginalPrice": "20000",
+        "used": "1.5"
+      },
+      {
+        "model": "Oppo F17",
+        "photo": "https://ibb.co/mCtv34S",
+        "location": "Khulna",
+        "resellPrice": "12000",
+        "orginalPrice": "18000",
+        "used": "1"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category_name": "I-Phone",
+    "img": "https://www.freepnglogos.com/uploads/apple-iphone-logo-png-1.png",
+    "phones": [
+      {
+        "model": "I-Phone 11",
+        "photo": "https://ibb.co/8NfhDnZ",
+        "location": "Dhaka",
+        "resellPrice": "150000",
+        "orginalPrice": "80000",
+        "used": "1.5"
+      },
+      {
+        "model": "I-Phone 12 Pro Max",
+        "photo": "https://ibb.co/R7QQS49",
+        "location": "Gazipur",
+        "resellPrice": "170000",
+        "orginalPrice": "120000",
+        "used": "2"
+      },
+      {
+        "model": "I-Phone 13 Pro Max",
+        "photo": "https://ibb.co/L69t6Tn",
+        "location": "Tangail",
+        "resellPrice": "190000",
+        "orginalPrice": "130000",
+        "used": "1.5"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category_name": "Samsung",
+    "img": "https://images.samsung.com/is/image/samsung/assets/bd/about-us/brand/logo/mo/256_144_1.png?$512_N_PNG$",
+    "phones": [
+      {
+        "model": "Samsung A03",
+        "photo": "https://ibb.co/4KbgT9v",
+        "location": "Dhaka",
+        "resellPrice": "25000",
+        "orginalPrice": "18000",
+        "used": "1.5"
+      },
+      {
+        "model": "Samsung A73-5-G-mint",
+        "photo": "https://ibb.co/8KmSmrc",
+        "location": "Tongi",
+        "resellPrice": "30000",
+        "orginalPrice": "20000",
+        "used": "2"
+      },
+      {
+        "model": "Samsung Galaxy Note 20",
+        "photo": "https://ibb.co/qgHY2TN",
+        "location": "Barishal",
+        "resellPrice": "80000",
+        "orginalPrice": "45000",
+        "used": "2.5"
+      }
+    ]
+  }
+]
