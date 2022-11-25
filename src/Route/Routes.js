@@ -3,6 +3,7 @@ import About from "../componets/About";
 import Blog from "../componets/Blog";
 import Contact from "../componets/Contact";
 import Home from "../componets/Home";
+import Phones from "../componets/Phones";
 import Main from "../layout/Main";
 
 export const routes = createBrowserRouter([
@@ -26,6 +27,11 @@ export const routes = createBrowserRouter([
         path: "/blog",
         element: <Blog></Blog>,
       },
+      {
+        path:'/category/:id',
+        element:<Phones></Phones>,
+        loader:({params})=> fetch(`http://localhost:5000/category/${params.id}`)
+      }
     ],
   },
 ]);

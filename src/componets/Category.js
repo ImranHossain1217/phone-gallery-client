@@ -5,7 +5,7 @@ const Category = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("category.json")
+    fetch("http://localhost:5000/category")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
@@ -17,7 +17,7 @@ const Category = () => {
       </h2>
       <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5">
         {categories.map((category) => (
-          <CategoryCard key={category.id} category={category}></CategoryCard>
+          <CategoryCard key={category._id} category={category}></CategoryCard>
         ))}
       </div>
     </div>
