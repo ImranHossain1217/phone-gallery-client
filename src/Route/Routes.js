@@ -5,6 +5,7 @@ import Contact from "../componets/Contact";
 import Home from "../componets/Home";
 import Login from "../componets/Login";
 import Phones from "../componets/Phones";
+import SignUp from "../componets/SignUp";
 import Main from "../layout/Main";
 
 export const routes = createBrowserRouter([
@@ -38,7 +39,8 @@ export const routes = createBrowserRouter([
         element:<Login></Login>
       },
       {
-        path:'/signup'
+        path:'/signup',
+        element:<SignUp></SignUp>
       }
     ],
   },
