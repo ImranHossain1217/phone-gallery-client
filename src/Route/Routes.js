@@ -9,6 +9,7 @@ import SignUp from "../componets/SignUp";
 import Main from "../layout/Main";
 import DashboardLayout from "../layout/DashboardLayout";
 import Dashboard from '../Dashboard/Dashboard';
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
   {
@@ -33,7 +34,7 @@ export const routes = createBrowserRouter([
       },
       {
         path:'/category/:id',
-        element:<Phones></Phones>,
+        element:<PrivateRoute><Phones></Phones></PrivateRoute>,
         loader:({params})=> fetch(`http://localhost:5000/category/${params.id}`)
       },
       {
@@ -48,7 +49,7 @@ export const routes = createBrowserRouter([
   },
   {
     path:"/dashboard",
-    element:<DashboardLayout></DashboardLayout>,
+    element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
     children:[
       {
         path:'/dashboard',
