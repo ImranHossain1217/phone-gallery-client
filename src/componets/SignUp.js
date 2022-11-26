@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const SignUp = () => {
   const {
@@ -9,8 +11,19 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
   const [signUpError, setSignUPError] = useState("");
+  const { createUser } = useContext(AuthContext);
 
-  const handleSignUp = (data) => {};
+  const handleSignUp = (data) => {
+    createUser(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success("User created Successfully");
+      })
+      .catch((err) => {
+        setSignUPError(err.message);
+      });
+  };
 
   return (
     <div className="h-[600px] flex justify-center mt-5">
