@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
   const {
@@ -9,8 +11,18 @@ const Login = () => {
     handleSubmit,
   } = useForm();
   const [loginError, setLoginError] = useState("");
+  const { userLogin } = useContext(AuthContext);
 
-  const handleLogin = (data) => {};
+  const handleLogin = (data) => {
+    userLogin(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        toast.success("Login Successfully");
+      })
+      .catch((err) => {
+        setLoginError(err);
+      });
+  };
 
   return (
     <div className="h-[500px] flex justify-center mt-5">
