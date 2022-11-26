@@ -8,7 +8,7 @@ const Phones = () => {
 
   return (
     <div className="w-10/12 mx-auto my-10">
-      <h2 className="text-4xl text-primary font-bold text-center">
+      <h2 className="text-3xl md:text-5xl text-primary font-bold text-center uppercase">
         Wellcome to {phonesCategory.category_name} World
       </h2>
 
