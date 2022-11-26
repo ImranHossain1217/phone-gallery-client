@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import BookingModal from "./BookingModal";
 import CategoryCard from "./CategoryCard";
 
 const Category = () => {

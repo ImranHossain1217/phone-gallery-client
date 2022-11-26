@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import BookingModal from "./BookingModal";
 import Phone from "./Phone";
 
 const Phones = () => {
   const phonesCategory = useLoaderData();
   const { phones } = phonesCategory;
+  const [modalPhone, setModalPhone] =useState(null);
 
   return (
     <div className="w-10/12 mx-auto my-10">
@@ -14,9 +16,12 @@ const Phones = () => {
 
       <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {phones.map((phone, i) => (
-          <Phone key={i} phone={phone}></Phone>
+          <Phone key={i} phone={phone} setModalPhone={setModalPhone}></Phone>
         ))}
       </div>
+      {
+        modalPhone && <BookingModal modalPhone={modalPhone} setModalPhone={setModalPhone}></BookingModal>
+      }
     </div>
   );
 };
