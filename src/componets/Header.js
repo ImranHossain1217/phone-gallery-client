@@ -16,6 +16,9 @@ const Header = () => {
       <li className="font-semibold">
         <Link to="/contact">Contact</Link>
       </li>
+      <li className="font-semibold">
+        <Link to="/login">Login</Link>
+      </li>
     </>
   );
   return (
