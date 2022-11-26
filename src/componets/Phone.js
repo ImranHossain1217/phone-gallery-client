@@ -1,9 +1,8 @@
 import React from "react";
-import BookingModal from "./BookingModal";
 
-const Phone = ({ phone,setModalPhone }) => {
-  const { model, photo, resellPrice, orginalPrice, used, location,name } = phone;
-
+const Phone = ({ phone, setModalPhone, disabled }) => {
+  const { model, photo, resellPrice, orginalPrice, used, location, name } =
+    phone;
 
   return (
     <div className="card card-compact mt-10 shadow-xl">
@@ -18,10 +17,17 @@ const Phone = ({ phone,setModalPhone }) => {
         <p className="font-semibold">Orginal Price: {orginalPrice} Taka</p>
         <p className="font-semibold">Used: {used} Year</p>
         <div className="card-actions justify-start">
-        <label onClick={()=>setModalPhone(phone)} htmlFor="booking-modal" className="btn btn-primary">Book Now</label>
+          <button>
+            <label
+              onClick={() => setModalPhone(phone)}
+              htmlFor="booking-modal"
+              className="btn btn-primary"
+            >
+              Book Now
+            </label>
+          </button>
         </div>
       </div>
-      {/* <BookingModal></BookingModal> */}
     </div>
   );
 };

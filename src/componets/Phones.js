@@ -6,7 +6,7 @@ import Phone from "./Phone";
 const Phones = () => {
   const phonesCategory = useLoaderData();
   const { phones } = phonesCategory;
-  const [modalPhone, setModalPhone] =useState(null);
+  const [modalPhone, setModalPhone] = useState(null);
 
   return (
     <div className="w-10/12 mx-auto my-10">
@@ -19,9 +19,12 @@ const Phones = () => {
           <Phone key={i} phone={phone} setModalPhone={setModalPhone}></Phone>
         ))}
       </div>
-      {
-        modalPhone && <BookingModal modalPhone={modalPhone} setModalPhone={setModalPhone}></BookingModal>
-      }
+      {modalPhone && (
+        <BookingModal
+          modalPhone={modalPhone}
+          setModalPhone={setModalPhone}
+        ></BookingModal>
+      )}
     </div>
   );
 };

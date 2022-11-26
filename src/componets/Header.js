@@ -21,7 +21,7 @@ const Header = () => {
         <Link to="/blog">Blog</Link>
       </li>
       <li className="font-semibold">
-        <Link to="/contact">Contact</Link>
+        <Link to="/contact">{user?.displayName}</Link>
       </li>
       {user?.email ? (
         <li className="font-semibold">
