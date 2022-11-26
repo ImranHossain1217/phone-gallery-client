@@ -7,6 +7,8 @@ import Login from "../componets/Login";
 import Phones from "../componets/Phones";
 import SignUp from "../componets/SignUp";
 import Main from "../layout/Main";
+import DashboardLayout from "../layout/DashboardLayout";
+import Dashboard from '../Dashboard/Dashboard';
 
 export const routes = createBrowserRouter([
   {
@@ -41,7 +43,19 @@ export const routes = createBrowserRouter([
       {
         path:'/signup',
         element:<SignUp></SignUp>
-      }
+      },
     ],
   },
+  {
+    path:"/dashboard",
+    element:<DashboardLayout></DashboardLayout>,
+    children:[
+      {
+        path:'/dashboard',
+        element:<Dashboard></Dashboard>
+      }
+    ]
+
+  }
+ 
 ]);
