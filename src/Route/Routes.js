@@ -10,6 +10,7 @@ import Main from "../layout/Main";
 import DashboardLayout from "../layout/DashboardLayout";
 import Dashboard from '../Dashboard/Dashboard';
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import MyOrder from "../componets/MyOrder";
 
 export const routes = createBrowserRouter([
   {
@@ -53,7 +54,7 @@ export const routes = createBrowserRouter([
     children:[
       {
         path:'/dashboard',
-        element:<Dashboard></Dashboard>
+        element:<MyOrder></MyOrder>
       }
     ]
 

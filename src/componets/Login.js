@@ -21,8 +21,9 @@ const Login = () => {
     userLogin(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        navigate(from, { replace: true });
+        // console.log(user)
         toast.success("Login Successfully");
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         setLoginError(err);

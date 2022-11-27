@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
-import BookingModal from "./BookingModal";
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
 import CategoryCard from "./CategoryCard";
 
 const Category = () => {
-  const [categories, setCategories] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:5000/category")
-      .then((res) => res.json())
-      .then((data) => setCategories(data));
-  }, []);
+  const {data:categories = []} = useQuery({
+    queryKey:['category'],
+    queryFn:()=> fetch("http://localhost:5000/category")
+    .then(res => res.json())
+  })
 
   return (
     <div className="my-10">
