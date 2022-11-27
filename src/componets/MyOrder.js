@@ -10,13 +10,17 @@ const MyOrder = () => {
 
   const { data: Orders = [], isLoading } = useQuery({
     queryKey: ["bookings", user?.email],
-    queryFn: () => fetch(url).then((res) => res.json()),
+    queryFn: () => fetch(url,{
+        headers:{
+            authorization:`bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then((res) => res.json()),
   });
 
   if(isLoading){
     return <Loading></Loading>
   };
-  
+
   return (
     <div className="my-5">
       <h2 className="text-3xl md:text-5xl text-primary text-center mb-5 font-bold">
