@@ -1,9 +1,10 @@
 import React from 'react';
+import MyOrder from '../componets/MyOrder';
 
 const Dashboard = () => {
     return (
         <div>
-            <h1>This is dashboard</h1>
+            <MyOrder></MyOrder>
         </div>
     );
 };
