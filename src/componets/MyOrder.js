@@ -1,17 +1,22 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Loading from './Loading';
 
 const MyOrder = () => {
   const { user } = useContext(AuthContext);
 
   const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
-  const { data: Orders = [] } = useQuery({
+  const { data: Orders = [], isLoading } = useQuery({
     queryKey: ["bookings", user?.email],
     queryFn: () => fetch(url).then((res) => res.json()),
   });
 
+  if(isLoading){
+    return <Loading></Loading>
+  };
+  
   return (
     <div className="my-5">
       <h2 className="text-3xl md:text-5xl text-primary text-center mb-5 font-bold">

@@ -12,7 +12,7 @@ const SignUp = () => {
   } = useForm();
   const [signUpError, setSignUPError] = useState("");
   const { createUser, updateUser } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSignUp = (data) => {
     createUser(data.email, data.password)
@@ -21,19 +21,37 @@ const SignUp = () => {
         console.log(user);
         toast.success("User created Successfully");
         const userInfo = {
-            displayName: data.name,
+          displayName: data.name,
         };
-        console.log(userInfo);
-        updateUser(userInfo)
-        .then(result => {
-            navigate('/')
-        })
+
+        updateUser(userInfo).then((result) => {
+          saveUser(data.name, data.email, data.role);
+        });
       })
       .catch((err) => {
         setSignUPError(err.message);
       });
   };
 
+  const saveUser = (name, email, role) => {
+    const user = {
+      name,
+      email,
+      role,
+    };
+
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        navigate("/");
+      });
+  };
   return (
     <div className="h-[600px] flex justify-center mt-5">
       <div className="w-96 px-10 py-5 border-2 rounded-md">
