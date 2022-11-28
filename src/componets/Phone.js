@@ -1,5 +1,4 @@
 import React from "react";
-import NewProduct from "./NewProduct";
 
 const Phone = ({ phone, setModalPhone, disabled }) => {
   const { model, photo, resellPrice, orginalPrice, used, location, name } =

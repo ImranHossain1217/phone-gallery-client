@@ -11,7 +11,8 @@ import Dashboard from "../Dashboard/Dashboard";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AllUser from "../Dashboard/AllUser";
 import AdminRoute from "../PrivateRoute/AdminRoute";
-import AddProducts from '../Dashboard/AddProducts';;
+import AddProducts from '../Dashboard/AddProducts';import ErrorPage from "../componets/ErrorPage";
+;
 
 export const routes = createBrowserRouter([
   {
@@ -76,4 +77,8 @@ export const routes = createBrowserRouter([
       },
     ],
   },
+  {
+    path:'*',
+    element:<ErrorPage></ErrorPage>
+  }
 ]);
