@@ -8,9 +8,10 @@ import Phones from "../componets/Phones";
 import SignUp from "../componets/SignUp";
 import Main from "../layout/Main";
 import DashboardLayout from "../layout/DashboardLayout";
-import Dashboard from '../Dashboard/Dashboard';
+import Dashboard from "../Dashboard/Dashboard";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
-
+import AllUser from "../Dashboard/AllUser";
+import AdminRoute from "../PrivateRoute/AdminRoute";
 
 export const routes = createBrowserRouter([
   {
@@ -34,30 +35,45 @@ export const routes = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path:'/category/:id',
-        element:<PrivateRoute><Phones></Phones></PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/category/${params.id}`)
+        path: "/category/:id",
+        element: (
+          <PrivateRoute>
+            <Phones></Phones>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/category/${params.id}`),
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path:'/signup',
-        element:<SignUp></SignUp>
+        path: "/signup",
+        element: <SignUp></SignUp>,
       },
     ],
   },
   {
-    path:"/dashboard",
-    element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
-    children:[
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
       {
-        path:'/dashboard',
-        element:<Dashboard></Dashboard>
-      }
-    ]
-
-  }
- 
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "/dashboard/allUsers",
+        element: (
+          <AdminRoute>
+            <AllUser></AllUser>
+          </AdminRoute>
+        ),
+      },
+    ],
+  },
 ]);
