@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import BookingModal from "./BookingModal";
+import NewProduct from "./NewProduct";
 import Phone from "./Phone";
 
 const Phones = () => {
@@ -25,6 +26,7 @@ const Phones = () => {
           setModalPhone={setModalPhone}
         ></BookingModal>
       )}
+      <NewProduct></NewProduct>
     </div>
   );
 };

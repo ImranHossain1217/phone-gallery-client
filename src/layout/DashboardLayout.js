@@ -2,11 +2,16 @@ import React, { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Header from "../componets/Header";
+import Loading from "../componets/Loading";
 import useAdmin from "../hooks/useAdmin";
 
 const DashboardLayout = () => {
-  const {user} = useContext(AuthContext);
+  const {user, loading} = useContext(AuthContext);
   const [isAdmin] = useAdmin(user?.email);
+  
+  if(loading){
+    return <Loading></Loading>
+  }
   return (
     <div>
       <Header></Header>
@@ -32,6 +37,9 @@ const DashboardLayout = () => {
             </li>
               </>
             }
+            <li>
+              <Link to='/dashboard/addProducts'>Add New Product</Link>
+            </li>
           </ul>
         </div>
       </div>

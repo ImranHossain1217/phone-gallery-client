@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import About from "../componets/About";
 import Blog from "../componets/Blog";
-import Contact from "../componets/Contact";
 import Home from "../componets/Home";
 import Login from "../componets/Login";
 import Phones from "../componets/Phones";
@@ -12,6 +11,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AllUser from "../Dashboard/AllUser";
 import AdminRoute from "../PrivateRoute/AdminRoute";
+import AddProducts from '../Dashboard/AddProducts';;
 
 export const routes = createBrowserRouter([
   {
@@ -25,10 +25,6 @@ export const routes = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
-      },
-      {
-        path: "/contact",
-        element: <Contact></Contact>,
       },
       {
         path: "/blog",
@@ -73,6 +69,10 @@ export const routes = createBrowserRouter([
             <AllUser></AllUser>
           </AdminRoute>
         ),
+      },
+      {
+        path: "/dashboard/addProducts",
+        element:<AddProducts></AddProducts>
       },
     ],
   },
