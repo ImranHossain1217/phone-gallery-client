@@ -26,7 +26,7 @@ const BookingModal = ({ modalPhone, setModalPhone, setDisabled }) => {
       phone,
     };
 
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://phone-gallery-server.vercel.app/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",

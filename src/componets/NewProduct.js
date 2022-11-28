@@ -9,7 +9,7 @@ const NewProduct = () => {
   const { data: products = [] } = useQuery({
     queryKey: ["category"],
     queryFn: () =>
-      fetch("http://localhost:5000/products").then((res) => res.json()),
+      fetch("https://phone-gallery-server.vercel.app/products").then((res) => res.json()),
   });
   return (
     <div className="my-10">

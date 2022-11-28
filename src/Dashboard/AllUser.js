@@ -6,12 +6,12 @@ const AllUser = () => {
 
    const {data:users = [], refetch} = useQuery({
     queryKey:['users'],
-    queryFn:()=> fetch('http://localhost:5000/users')
+    queryFn:()=> fetch('https://phone-gallery-server.vercel.app/users')
     .then(res => res.json())
    });
 
      const handleAdmin = id => {
-        fetch(`http://localhost:5000/users/admin/${id}`,{
+        fetch(`https://phone-gallery-server.vercel.app/users/admin/${id}`,{
             method:'PUT',
             headers: {
               authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -28,7 +28,7 @@ const AllUser = () => {
      };
 
      const handleDelete = id => {
-       fetch(`http://localhost:5000/users/admin/${id}`,{
+       fetch(`https://phone-gallery-server.vercel.app/users/admin/${id}`,{
         method:'DELETE'
        })
        .then(res => res.json())

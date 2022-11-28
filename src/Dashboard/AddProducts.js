@@ -21,7 +21,7 @@ const AddProducts = () => {
             photo:data.photo
         };
         console.log(products)
-        fetch('http://localhost:5000/products',{
+        fetch('https://phone-gallery-server.vercel.app/products',{
             method:"POST",
             headers:{
                 'content-type':'application/json'

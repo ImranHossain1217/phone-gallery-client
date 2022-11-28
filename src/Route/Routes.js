@@ -39,7 +39,7 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(`https://phone-gallery-server.vercel.app/category/${params.id}`),
       },
       {
         path: "/login",
